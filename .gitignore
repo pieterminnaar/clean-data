@@ -6,3 +6,10 @@
 
 # R data files from past sessions
 .Rdata
+
+# zips
+*.zip
+
+UCI HAR Dataset
+
+.DS_Store
