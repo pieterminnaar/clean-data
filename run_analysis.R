@@ -2,6 +2,9 @@
 # Row binds the test and train columns
 # Reads the feature names
 # Selects the columns that end in std() or mean()
+# Requires reshape2 and plyr packages
+library(reshape2)
+library(plyr)
 
 x.test.observations <- read.table("./UCI HAR Dataset/test/X_test.txt", header=FALSE)
 x.train.observations <- read.table("./UCI HAR Dataset/train/X_train.txt", header=FALSE)
@@ -33,3 +36,11 @@ subject.activity <- cbind(subjects, activities[,2])
 names(subject.activity) <- c("subject", "activity")
 
 combined.data <- cbind(subject.activity, observations.means.stds)
+
+combined.data.row.values <- melt(combined.data, id.vars=c("subject", "activity"))
+
+mean.subject.activity.variable <- ddply(combined.data.row.values, .(subject, activity, variable), summarize, mean(value))
+names(mean.subject.activity.variable)[4] <- "mean"
+
+write.csv(mean.subject.activity.variable, file = "tidy_data.txt", row.names=FALSE)
+
