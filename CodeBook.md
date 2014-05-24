@@ -1,17 +1,22 @@
-Title
+Cleaning Data code book
 ========================================================
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **Help** toolbar button for more details on using R Markdown). 
+Introduction
+--------------------------------------------------------
+The file run_analysis.R can be used to create analyze the source files as obtained from the URL [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The source data was created by using data test subjects wearing smartphones and logging all the movements for. By videotaping the subjects it was possible to link each movement made by the test subjects to exact measurements from the smartphones. 
 
-When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Analysis
+--------------------------------------------------------
+The goal of the analysis is to combine the source datasets and to link each measurement with an acitivity. After this it is required to create a dataset with a mean value per subject, activity and the measurements. 
 
-```{r}
-summary(cars)
-```
+Packages
+--------------------------------------------------------
+The following packages are required to run the file:
+* reshape2
+* plyr
 
-You can also embed plots, for example:
+Workflow
+--------------------------------------------------------
 
-```{r fig.width=7, fig.height=6}
-plot(cars)
-```
+
 
