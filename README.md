@@ -9,7 +9,7 @@ To create a new output file from the source ensure that:
 
 Run the analysis with the command: **source**("run_analysis.R")
 
-After the file completes a file named `tidy_data.txt` will be in the working directory. 
+After the file completes a file named `tidy_data.txt` will be in the working directory. This file contains the averages for the mean and standard deviation values in rows, not columns. 
 
 See the `CodeBook.md` file for a description of the workflow that creates the output file. 
 
